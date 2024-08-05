@@ -6,7 +6,6 @@ import 'package:todo_app_task/shared/components/bloc_observer.dart';
 import 'package:todo_app_task/shared/components/constants.dart';
 import 'package:todo_app_task/shared/network/local/cache.dart';
 import 'package:todo_app_task/shared/network/remote/dio_help.dart';
-import 'package:todo_app_task/shared/network/remote/dio_helper.dart';
 
 import 'modules/screens/start_page/start_page_screen.dart';
 import 'modules/screens/tasks/tasks_screen.dart';
@@ -15,7 +14,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
   DioHelp.dioInit();
-  DioHelper.init();
   await CacheHelper.init();
   refreshToken = CacheHelper.getData(key: 'refresh_token') ?? '';
   Widget widget;
